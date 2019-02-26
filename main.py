@@ -26,8 +26,13 @@ for i in A:
 matrix_mult(aCopy,A)
 print_matrix(A)
 
-m1=[[0,0,0,1],[5,10,0,1],[10,10,0,1],[10,5,0,1]]
+m1=[[5,5,0,1],[25,50,0,1],[25,50,0,1],[50,50,0,1],[50,50,0,1],[50,25,0,1],[50,25,0,1],[5,5,0,1]]
+for i in range(2,15):
+    draw_lines( m1, screen, color )
+    color[2]=color[2]+30
+    m1=[[5,5,0,1],[25,50,0,1],[25,50,0,1],[50,50,0,1],[50,50,0,1],[50,25,0,1],[50,25,0,1],[5,5,0,1]]
+    m=[[i,0,0,0],[0,i,0,0],[0,0,1,0],[0,0,0,1]]
+    matrix_mult(m,m1)
 
-draw_lines( m1, screen, color )
 save_extension(screen, 'img.png')
 display(screen)
